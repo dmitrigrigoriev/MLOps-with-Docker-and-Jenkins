@@ -7,6 +7,11 @@ from joblib import dump
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.linear_model import LogisticRegression
 
+import mlflow
+import mlflow.sklearn
+
+mlflow.set_tracking_uri(os.environ["MLFLOW_ADDRESS"])
+mlflow.set_experiment("adult-train")
 
 # Set path to inputs
 PROCESSED_DATA_DIR = os.environ["PROCESSED_DATA_DIR"]
@@ -53,3 +58,10 @@ results_path = os.path.join(RESULTS_DIR, train_results_file)
 with open(results_path, 'w') as outfile:
     json.dump(train_metadata, outfile)
 
+metrics = {"train_score": logit_model.score(X_train, y_train)}
+print(metrics)
+
+# log params to mlflow and artifacts to minio
+mlflow.log_params({"n_estimators":100})
+mlflow.log_metrics(metrics)
+mlflow.sklearn.log_model(logit_model, "rf-regressor")
