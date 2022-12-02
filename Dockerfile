@@ -23,6 +23,8 @@ ENV MODEL_DIR=/home/jovyan/model
 ENV RESULTS_DIR=/home/jovyan/results
 ENV RAW_DATA_FILE=adult.csv
 ENV MLFLOW_ADDRESS=http://172.17.0.5:5000
+ENV AWS_ACCESS_KEY_ID=mlops
+ENV AWS_SECRET_ACCESS_KEY=l7zeWO6vqYiy
 
 
 COPY adult.csv ./raw_data/adult.csv
