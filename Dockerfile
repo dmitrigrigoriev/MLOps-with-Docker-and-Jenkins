@@ -1,16 +1,15 @@
 FROM python:3.8-alpine3.15
 
+
+USER root
+RUN apt update && apt install -y jq && apt install -y gcc
+RUN mkdir model raw_data processed_data results
+
 RUN pip3 install mlflow
 RUN pip3 install sklearn
 RUN pip3 install numpy
 RUN pip3 install pandas
 RUN pip3 install joblib
-
-
-USER root
-RUN apt update && apt install -y jq
-
-RUN mkdir model raw_data processed_data results
 
 
 ENV RAW_DATA_DIR=/home/jovyan/raw_data
