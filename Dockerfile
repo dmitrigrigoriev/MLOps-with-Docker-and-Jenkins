@@ -19,7 +19,7 @@ ENV PROCESSED_DATA_DIR=/home/jovyan/processed_data
 ENV MODEL_DIR=/home/jovyan/model
 ENV RESULTS_DIR=/home/jovyan/results
 ENV RAW_DATA_FILE=adult.csv
-ENV MLFLOW_ADDRESS=http://localhost:5001
+ENV MLFLOW_ADDRESS=http://172.17.0.5:5001
 
 
 COPY adult.csv ./raw_data/adult.csv
