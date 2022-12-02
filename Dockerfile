@@ -3,7 +3,7 @@ FROM python:3.8-alpine3.17
 
 USER root
 #RUN apt update && apt install -y jq && apt install -y gcc
-RUN apk update && apk add -y jq && apk add -y gcc
+RUN apk update && apk add jq && apk add gcc
 
 RUN mkdir model raw_data processed_data results
 
