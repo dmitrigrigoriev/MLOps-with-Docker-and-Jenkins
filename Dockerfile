@@ -12,6 +12,9 @@ RUN pip3 install sklearn
 RUN pip3 install numpy
 RUN pip3 install pandas
 RUN pip3 install joblib
+RUN pip3 install boto3
+
+RUN conda install -c conda-forge boto3
 
 
 ENV RAW_DATA_DIR=/home/jovyan/raw_data
