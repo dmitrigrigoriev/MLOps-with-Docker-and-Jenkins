@@ -3,7 +3,7 @@ FROM python:3.8-alpine3.17
 
 USER root
 #RUN apt update && apt install -y jq && apt install -y gcc
-RUN apk update && apk add jq && apk add gcc
+RUN apk update && apk add jq gcc libblas-dev liblapack-dev libatlas-base-dev gfortran
 
 RUN mkdir model raw_data processed_data results
 
