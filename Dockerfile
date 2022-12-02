@@ -1,6 +1,6 @@
 FROM python:3.8-alpine3.15
 
-RUN pip3 install mflow
+RUN pip3 install mlflow
 RUN pip3 install sklearn
 RUN pip3 install numpy
 RUN pip3 install pandas
