@@ -61,7 +61,10 @@ with open(results_path, 'w') as outfile:
 metrics = {"train_score": logit_model.score(X_train, y_train)}
 print(metrics)
 
+for key in os.environ:
+    print(key, '=>', os.environ[key])
+
 # log params to mlflow and artifacts to minio
 mlflow.log_params({"n_estimators":100})
 mlflow.log_metrics(metrics)
-mlflow.sklearn.log_model(logit_model, "rf-regressor")
+mlflow.log_artifact(model_path)
