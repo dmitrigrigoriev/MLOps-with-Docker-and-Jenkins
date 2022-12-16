@@ -23,9 +23,6 @@ ENV MODEL_DIR=/home/jovyan/model
 ENV RESULTS_DIR=/home/jovyan/results
 ENV RAW_DATA_FILE=adult.csv
 ENV MLFLOW_ADDRESS=http://172.18.0.6:5000
-ENV AWS_ACCESS_KEY_ID=minio
-ENV AWS_SECRET_ACCESS_KEY=minio123
-ENV AWS_DEFAULT_REGION=eu-central-1
 
 COPY adult.csv ./raw_data/adult.csv
 COPY preprocessing.py ./preprocessing.py
