@@ -45,7 +45,7 @@ random_grid = { "n_estimators": n_estimators,
 
 rf = RandomForestRegressor()
 
-rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_grid, n_inter = 10, cv=3, verbose=3, random_state=42, n_jobs=1)
+rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_grid, n_iter = 10, cv=3, verbose=3, random_state=42, n_jobs=1)
 
 df = pd.DataFrame(rf_random.cv_results_)
 
