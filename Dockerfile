@@ -33,4 +33,4 @@ COPY train.py ./train.py
 COPY test.py ./test.py
 COPY tune_model.py ./tune_model.py
 RUN mkdir /home/jovyan/.aws
-COPY /Users/.aws/credentials /home/jovyan/.aws/credentials
+COPY /Users/dmgrigoriev/.aws/credentials /home/jovyan/.aws/credentials
