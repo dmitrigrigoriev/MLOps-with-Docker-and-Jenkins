@@ -31,3 +31,4 @@ COPY adult.csv ./raw_data/adult.csv
 COPY preprocessing.py ./preprocessing.py
 COPY train.py ./train.py
 COPY test.py ./test.py
+COPY tune_model.py ./tune_model.py
