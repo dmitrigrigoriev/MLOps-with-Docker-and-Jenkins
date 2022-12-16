@@ -46,10 +46,10 @@ random_grid = { "n_estimators": n_estimators,
 rf = RandomForestRegressor()
 
 rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_grid, n_iter = 10, cv=3, verbose=3, random_state=42, n_jobs=1)
+rf_random.fit(X_train, y_train)
 
 df = pd.DataFrame(rf_random.cv_results_)
 
-mlflow.set_experiment("Test_123")
 with mlflow.start_run():
     for index, row in df.iterrows():
         mlflow.log_param(row["params"])
