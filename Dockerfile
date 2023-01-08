@@ -31,3 +31,8 @@ COPY test.py ./test.py
 COPY tune_model.py ./tune_model.py
 RUN mkdir /home/jovyan/.aws
 COPY credentials /home/jovyan/.aws/credentials
+
+RUN mkdir /root/.aws
+COPY credentials /root/.aws/credentials
+
+
