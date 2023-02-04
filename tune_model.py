@@ -13,7 +13,7 @@ import mlflow
 import mlflow.sklearn
 
 mlflow.set_tracking_uri(os.environ["MLFLOW_ADDRESS"])
-mlflow.set_experiment("adult-train")
+mlflow.set_experiment("adult-train2")
 
 # Set path to inputs
 PROCESSED_DATA_DIR = os.environ["PROCESSED_DATA_DIR"]
