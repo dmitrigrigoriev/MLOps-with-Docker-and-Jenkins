@@ -22,7 +22,7 @@ ENV PROCESSED_DATA_DIR=/home/jovyan/processed_data
 ENV MODEL_DIR=/home/jovyan/model
 ENV RESULTS_DIR=/home/jovyan/results
 ENV RAW_DATA_FILE=adult.csv
-ENV MLFLOW_ADDRESS=http://172.18.0.4:5000
+ENV MLFLOW_ADDRESS=http://mlflow_server:5000
 
 COPY adult.csv ./raw_data/adult.csv
 COPY preprocessing.py ./preprocessing.py
